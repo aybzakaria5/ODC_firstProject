@@ -59,6 +59,44 @@
         .section-heading-lower {
             text-transform: lowercase;
         }
+        /*this is the contact us bottun's css*/
+        .contact-header {
+            text-align: center;
+            margin-bottom: 1.5rem; /* Adjust space below the header */
+            color: #d4af37; /* Gold color for the subheading */
+        }
+
+        /* Subheading style */
+        .contact-header .subheading {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #b89f73; /* Slightly different shade for contrast */
+            display: inline-block;
+            position: relative;
+            margin-bottom: 0.5rem; /* Space between subheading and main heading */
+        }
+
+        .contact-header .subheading::before,
+        .contact-header .subheading::after {
+            content: '—';
+            margin: 0 0.5rem; /* Space between text and lines */
+            color: #fff; /* White lines for contrast */
+            font-size: 1.5rem; /* Adjust to your preference */
+        }
+
+        /* Main heading style */
+        .contact-header .main-heading {
+            font-family: 'Cinzel', serif; /* Same as in your provided CSS */
+            font-size: 2.5rem; /* Larger size for main heading */
+            font-weight: 700; /* Bold font weight */
+            letter-spacing: 2px; /* Space between letters */
+            color: #ddd; /* Light gray for the main heading */
+            margin: 0;
+            padding: 0.5rem 0; /* Padding for vertical spacing */
+            border-top: 1px solid #b89f73; /* Top border line */
+            border-bottom: 1px solid #b89f73; /* Bottom border line */
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -129,31 +167,44 @@
         </div>
     </section>
 
-    <section class="page-section pt-5" style="background-color: #000;">
+    <hr style="border: 0; /* Remove default border */
+    height: 2px; /* Increase height to make it thicker */
+    background-color: #fff; /* Set custom color */
+    width: 100%; /* Adjust the width as needed (percentage or fixed value) */
+    margin: 2rem auto;">
+
+    <section class="page-section pt-1" style="background-color: #000;">
         <div class="container">
             <div class="contact-heading-content">
                 <div class="row">
                     <div class="col-lg-10 col-xl-9 mx-auto">
                         <div class="rounded ">
-                            <h2 class="section-heading mb-4">
-                                <span class="section-heading-upper mb-2">Reach Out to Us</span>
-                                <span class="section-heading-capitalize">Contact Us</span>
-                            </h2>
+                            <div class="contact-header">
+                                <span class="subheading">Send Us Message</span> <br>
+                                <h2 class="main-heading">CONTACT FORM</h2>
+                            </div>
                             <form onsubmit="SendEmail(); reset(); return false;">
-                                <div class="form-group mt-3">
-                                    <label for="name" style="font-family: Arial, Helvetica, sans-serif;">Name:</label>
-                                    <input type="text" class="form-control mt-2" id="name" name="name" required>
+                                <div class="row">
+                                    <div class="col-md-4 form-group mt-3">
+                                        <label for="name" style="font-family: Arial, Helvetica, sans-serif">Name:</label>
+                                        <input style="font-family: Arial, sans-serif; background-color: #000; color: #fff; outline-color: #fff; border-color: #fff" type="text" class="form-control custom-input mt-2" id="name" name="name" required>
+                                    </div>
+                                    <div class="col-md-4 form-group mt-3">
+                                        <label for="email" style="font-family: Arial, Helvetica, sans-serif">Email:</label>
+                                        <input style="font-family: Arial, sans-serif; background-color: #000; color: #fff; outline-color: #fff; border-color: #fff" type="email" class="form-control custom-input mt-2" id="email" name="email" required>
+                                    </div>
+                                    <div class="col-md-4 form-group mt-3">
+                                        <label for="phone" style="font-family: Arial, Helvetica, sans-serif">Phone Number:</label>
+                                        <input style="font-family: Arial, sans-serif; background-color: #000; color: #fff; outline-color: #fff; border-color: #fff" type="tel" class="form-control custom-input mt-2" id="phone" name="phone" required>
+                                    </div>
                                 </div>
                                 <div class="form-group mt-3">
-                                    <label for="email" style="font-family: Arial, Helvetica, sans-serif;">Email:</label>
-                                    <input type="email" class="form-control mt-2" id="email" name="email" required>
+                                    <label for="message" style="font-family: Arial, Helvetica, sans-serif">Message:</label>
+                                    <textarea style="font-family: Arial, sans-serif; background-color: #000; color: #fff; outline-color: #fff; border-color: #fff" class="form-control custom-input mt-2" id="message" name="message" rows="4" required></textarea>
                                 </div>
-                                <div class="form-group mt-3">
-                                    <label for="message" style="font-family: Arial, Helvetica, sans-serif;">Message:</label>
-                                    <textarea class="form-control mt-2" id="message" name="message" rows="4" required></textarea>
+                                <div class="d-flex justify-content-center align-items-center mt-4" >
+                                    <button style="font-family: Arial, sans-serif; color:  #000; background-color: #eeeeee;" type="submit" class="btn mt-3 p-3">SEND MESSAGE</button>
                                 </div>
-                                <button style="font-family: Arial, sans-serif; color:#000 ; background-color:#f5f5f5" type="submit" class="btn  mt-3" >Send Message</button>
-                                
                             </form>
                         </div>
                     </div>
@@ -232,7 +283,7 @@
                                             }
                                         );
                                     }
-                                </script>
+    </script>
 </body>
 
 </html>
